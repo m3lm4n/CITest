@@ -15,7 +15,7 @@ addons:
       secure: VJjGgJOdNDBjqA2xI2Jq83XheAM4RHlGdNQLK397+jWvvcn18pTUUmlD7BKvBKASr7yeokH8n7mG1q8onCsQYB7p98l/i7Ys7BzuxuGGLf8YWAELqJ3G5lMj53/9TaID+q52CXjlAk3MLLpp106Tyjfu/1TbbCzvDZszJX2OfrY=
     secret:
       secure: vp7c37yhvFI8H0W8dFbE2ah7hyBzBkUmrgGRjqYRLkoHiI8fWhzmNdzgTRdbPi+phU0+SmfxzdDmvclhwedKVRztTaH//3mzeuJpDzwepE+Yc89VkjkrspjtQEcaVXXG5H2JLv6XyefQ7MEktSqgOC5v4cRCa+UwqzsnoXjnKOQ=
-    bucket: S3 bucket
+    bucket: traviscilastowski
 branches:
   only:
   - master
