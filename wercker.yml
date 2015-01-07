@@ -15,14 +15,17 @@ build:
     - setup-android-emulator:
         target: android-19
         abi: armeabi-v7a
-    - script:
-        name: run gradle connectedCheck
-        code: |
-          gradle --project-cache-dir=$WERCKER_CACHE_DIR connectedCheck
+
     - script:
         name: run gradle build
         code: |
           gradle --full-stacktrace --project-cache-dir=$WERCKER_CACHE_DIR build
+
+    - script:
+        name: run gradle connectedCheck
+        code: |
+          gradle --project-cache-dir=$WERCKER_CACHE_DIR connectedCheck
+    
   after-steps:
     # Use the build results
     - script:
