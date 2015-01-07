@@ -48,7 +48,13 @@ public class MainActivityTest extends ActivityInstrumentationTestCase2<MainActiv
     }
 
     public void testButtonToggleOneTime() throws Exception {
-        mButton.callOnClick();
+        mActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mButton.callOnClick();
+            }
+        });
+
 
         mInstrumentation.waitForIdleSync();
 
