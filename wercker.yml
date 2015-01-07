@@ -1,7 +1,5 @@
 box: wercker/android
 # Build definition
-
-
 build:
   # The steps that will be executed on build
   steps:
@@ -10,26 +8,20 @@ build:
         code: |
           gradle -v
           echo $ANDROID_HOME
-          echo $ANDROID_SDK_VERSION
           echo $ANDROID_BUILD_TOOLS
           echo $ANDROID_UPDATE_FILTER
-
     - android-sdk-update:
-      filter: sysimg-21
+        filter: sysimg-18
     - setup-android-emulator:
-      target: android-19
-
-    # A step that executes `gradle build` command
-    - script:
-        name: run gradle
-        code: |
-          gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
-
+        target: android-18
     - script:
         name: run gradle connectedCheck
         code: |
-            gradle --project-cache-dir=$WERCKER_CACHE_DIR connectedCheck
-
+          gradle --project-cache-dir=$WERCKER_CACHE_DIR connectedCheck
+    - script:
+        name: run gradle build
+        code: |
+          gradle --full-stacktrace --project-cache-dir=$WERCKER_CACHE_DIR build
   after-steps:
     # Use the build results
     - script:
