@@ -15,6 +15,16 @@ android {
         testHandleProfiling true
         testFunctionalTest true
     }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+        }
+        instrumentTest {
+            java.srcDirs = ['src/androidTest/java']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
