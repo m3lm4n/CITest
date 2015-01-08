@@ -25,7 +25,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 if(mTvTarget.getText().toString().equals("Start")){
-                    mTvTarget.setText("End");
+                    mTvTarget.setText("Enda");
                 } else {
                     mTvTarget.setText("Start");
                 }
