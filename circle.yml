@@ -17,4 +17,4 @@ test:
   - ./wait_for_emulator.sh:
       parallel: true
   - ./gradlew connectedCheck 
-  - cp app/build/outputs/reports/androidTest/connected $CIRCLE_TEST_REPORTS/
+  - echo | ls
