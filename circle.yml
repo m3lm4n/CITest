@@ -17,4 +17,8 @@ test:
   - ./wait_for_emulator.sh:
       parallel: true
   - ./gradlew connectedCheck 
+  post:
   - echo | ls
+  - echo | ls app
+  - echo | ls app/build
+  - echo | ls app/build/outputs
