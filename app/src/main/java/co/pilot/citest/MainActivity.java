@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import net.hockeyapp.android.CrashManager;
+import net.hockeyapp.android.UpdateManager;
+
 
 public class MainActivity extends ActionBarActivity {
     Button mBtnToggle;
@@ -18,6 +21,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        checkForCrashes();
+        checkForUpdates();
+
         mBtnToggle = (Button) findViewById(R.id.btn_toggle);
         mTvTarget = (TextView) findViewById(R.id.textView);
 
@@ -25,12 +31,21 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 if(mTvTarget.getText().toString().equals("Start")){
-                    mTvTarget.setText("Enda");
+                    mTvTarget.setText("End");
                 } else {
                     mTvTarget.setText("Start");
                 }
             }
         });
+    }
+
+    private void checkForCrashes() {
+        CrashManager.register(this, "6c81de0302e140ef4afd0e1dc17e6490");
+    }
+
+    private void checkForUpdates() {
+        // Remove this for store builds!
+        UpdateManager.register(this, "6c81de0302e140ef4afd0e1dc17e6490");
     }
 
 
