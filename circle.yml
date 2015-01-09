@@ -17,13 +17,13 @@ test:
   - ./wait_for_emulator.sh:
       parallel: true
   - ./gradlew connectedCheck 
+  - ./gradlew build
   post:
   - mkdir -p $CIRCLE_TEST_REPORTS/android
-  - cp -a app/build/outputs/androidTest-results/connected/. $CIRCLE_TEST_REPORTS/android/
+  - cp -a app/build/outputs/. $CIRCLE_TEST_REPORTS/android/
 
 deployment:
   beta:
     branch: master
     commands:
-    - ./gradlew build
     - ./deploy_to_hockeyapp.sh
