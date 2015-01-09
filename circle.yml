@@ -26,3 +26,10 @@ test:
   - echo | ls app/build/outputs/androidTest-results/connected
   - mkdir -p $CIRCLE_TEST_REPORTS/android
   - cp -a app/build/outputs/androidTest-results/connected/. $CIRCLE_TEST_REPORTS/android/
+
+deployment:
+  beta:
+    branch: master
+    commands:
+    - ./gradlew build
+    - ./deploy_to_hockeyapp.sh
